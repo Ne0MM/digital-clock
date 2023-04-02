@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+.App{
+  height: 100vh;
+  background-color: #2E4F4F;
+  color: #CBE4DE;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.clockContainer{
+  height: 100%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+.timeContainer{
+  height: 50%;
+  width: 33%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.blur{
+  height: 50%;
+  width: 3rem;
+  position: absolute;
+  z-index: 2;
+  background-image: linear-gradient(#2E4F4F 0%, #2E4F4F 20%, #00000000 35%, #00000000 65%, #2E4F4F 80% , #2E4F4F 100%);
+}
+
+.HourBox{
+  height: 4rem;
+  width: 3rem;
+  font-size: 2rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.tickContainer{
+  background-color: #0E8388;
+  transform: translateY(var(--trans-value));
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tickIndicator{
+  height: 4rem;
+  width: 3rem;
+  border: 1px solid black;
+  z-index: 1;
+  position: absolute;
+  transform: translateY(9rem);
 }

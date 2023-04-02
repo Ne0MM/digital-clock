@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HourTick from './Components/HourTick';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='clockContainer'>
+        <div className="timeContainer">
+          <div className='blur'></div>
+          <div className='tickIndicator'></div>
+          <HourTick/>
+        </div>
+        <div className="timeContainer"></div>
+        <div className="timeContainer"></div>
+      </div>
+
     </div>
   );
 }
