@@ -1,11 +1,21 @@
-type Props = {}
+type Props = {
+  hourData : number,
+}
 
-function HourTick({}: Props) {
+function HourTick(props: Props) {
 
-    const trans = 1;
+  const hourToRem = () => {
+    let hourProxy = props.hourData
+    if (props.hourData > 12 && props.hourData <= 24){
+      hourProxy -= 12 
+    }
+    let updatedRem = -(hourProxy * 4) + 5;
+
+    return updatedRem
+  }
 
   return (
-    <div className="tickContainer" style={{['--trans-value' as any] : `${trans}rem`}}>
+    <div className="tickContainer" style={{['--trans-value' as any] : `${hourToRem()}rem`}}>
         <div className="HourBox"></div>
         <div className="HourBox"></div>
         <div className="HourBox">1</div>
@@ -23,7 +33,7 @@ function HourTick({}: Props) {
         <div className="HourBox"></div>
         <div className="HourBox"></div>
     </div>
-  )
+  ) 
 }
 
 export default HourTick
